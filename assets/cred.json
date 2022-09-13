@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "uname": "sanish",
+      "pass": "1234",
+      "isActive": "false"
+    }
+  ]
+}
