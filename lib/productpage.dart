@@ -26,7 +26,6 @@ class _prodPageState extends State<prodPage>{
             future: DefaultAssetBundle.of(context)
                 .loadString('assets/products.json'),
             builder: (context, snapshot) {
-              // Decode the JSON
               var newData = json.decode(snapshot.data.toString());
               return GridView.builder(
 
@@ -58,7 +57,6 @@ class _prodPageState extends State<prodPage>{
                           ),
                           //SizedBox(width: 20),
                           Container(
-
                             // padding: const EdgeInsets.all(4),
                             height: 70,
                             width: 70,
