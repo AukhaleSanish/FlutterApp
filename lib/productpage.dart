@@ -26,6 +26,10 @@ class _prodPageState extends State<prodPage>{
             future: DefaultAssetBundle.of(context)
                 .loadString('assets/products.json'),
             builder: (context, snapshot) {
+<<<<<<< HEAD
+=======
+              // Decode the JSON
+>>>>>>> flutter/master
               var newData = json.decode(snapshot.data.toString());
               return GridView.builder(
 
@@ -57,6 +61,10 @@ class _prodPageState extends State<prodPage>{
                           ),
                           //SizedBox(width: 20),
                           Container(
+<<<<<<< HEAD
+=======
+
+>>>>>>> flutter/master
                             // padding: const EdgeInsets.all(4),
                             height: 70,
                             width: 70,
