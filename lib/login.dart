@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sanish/productpage.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -21,16 +22,20 @@ class _MyLoginState extends State<MyLogin> {
     final data = await json.decode(response);
     setState(() {
       _users = data["users"];
-      setState(() {
+      setState(() async {
               if(uName.text==_users[0]["uname"] && password.text==_users[0]["pass"]){
-                showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        content: Text("Successful"),
-                      );
-                    },
-                  );
+                await Future.delayed(Duration(milliseconds: 1000),(){});
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => prodPage()));
+
+                // showDialog(
+                //     context: context,
+                //     builder: (context) {
+                //       return AlertDialog(
+                //         content: Text("Successful"),
+                //       );
+                //     },
+                //   );
               }
               else{
                 showDialog(
@@ -46,8 +51,6 @@ class _MyLoginState extends State<MyLogin> {
       });
     });
   }
-
-
 
 
   @override
@@ -98,34 +101,13 @@ class _MyLoginState extends State<MyLogin> {
                   //     },
                   //   );
                   // });
-                  // },//submit code
+                  // },/
 
                   child: Text('Login'),
                   onPressed: readJson,
                 ),
 
-                // _users.isNotEmpty ?
-                // Expanded(
-                //   child: ListView.builder(
-                //     itemCount: _users.length,
-                //     itemBuilder: (context, index) {
-                //       return Card(
-                //         margin: const EdgeInsets.all(10),
-                //         child: ListTile(
-                //           leading: Text(_users[index]["uname"]),
-                //           title: Text(_users[index]["pass"]),
-                //           subtitle: Text(_users[index]["isActive"]),
-                //         ),
-                //       );
-                //     },
-                //   ),
-                // )
-                //     : Container()
-              // if()
-              // {
-              //
-              // }
-              // Column(
+
 
               ],
             ),

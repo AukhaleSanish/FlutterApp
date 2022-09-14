@@ -1,0 +1,27 @@
+[
+    {
+      "productName": "Product1",
+      "imageLink": "assets/images/Product1.jpeg",
+      "productPrice" : "100"
+    },
+    {
+      "productName": "Product2",
+      "imageLink": "assets/images/Product2.jpeg",
+      "productPrice" : "200"
+    },
+    {
+      "productName": "Product3",
+      "imageLink": "assets/images/Product3.jpeg",
+      "productPrice" : "300"
+    },
+    {
+      "productName": "Product4",
+      "imageLink": "assets/images/Product4.jpeg",
+      "productPrice" : "400"
+    },
+    {
+      "productName": "Product5",
+      "imageLink": "assets/images/Product5.jpeg",
+      "productPrice" : "500"
+    }
+  ]
