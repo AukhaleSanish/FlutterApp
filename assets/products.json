@@ -23,5 +23,15 @@
       "productName": "Product5",
       "imageLink": "assets/images/Product5.jpeg",
       "productPrice" : "500"
+    },
+    {
+      "productName": "Product6",
+      "imageLink": "assets/images/Product5.jpeg",
+      "productPrice" : "500"
+    },
+    {
+      "productName": "Product6",
+      "imageLink": "assets/images/Product5.jpeg",
+      "productPrice" : "500"
     }
   ]

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sanish/productpage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -18,15 +19,21 @@ class _MyLoginState extends State<MyLogin> {
 
   // Fetch content from the json file
   Future<void> readJson() async {
+    // final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+    // late Future<String> _unameCheck;
     final String response = await rootBundle.loadString('assets/cred.json');
     final data = await json.decode(response);
     setState(() {
       _users = data["users"];
       setState(() async {
+            //  final prefs = await SharedPreferences.getInstance();
+
               if(uName.text==_users[0]["uname"] && password.text==_users[0]["pass"]){
+                 //prefs.setString('uname', _users[0]["uname"]);
+
                 await Future.delayed(Duration(milliseconds: 1000),(){});
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => prodPage()));
+                    context, MaterialPageRoute(builder: (context) => ProdPage()));
 
                 // showDialog(
                 //     context: context,
@@ -55,7 +62,9 @@ class _MyLoginState extends State<MyLogin> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+
       body: Stack(
         children: [
           Container(
@@ -74,7 +83,9 @@ class _MyLoginState extends State<MyLogin> {
                   controller: uName,
                   decoration: InputDecoration(
                     hintText: 'USERNAME'
+
                   ),
+
                 ),
                 SizedBox(
                   height: 10,
@@ -102,9 +113,13 @@ class _MyLoginState extends State<MyLogin> {
                   //   );
                   // });
                   // },/
-
+                    onPressed:() async{
+                      readJson();
+                      final SharedPreferences prefs = await SharedPreferences.getInstance() ;
+                      prefs.setString('unameSending', uName.text);
+                    },
                   child: Text('Login'),
-                  onPressed: readJson,
+
                 ),
 
 
