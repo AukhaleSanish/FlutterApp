@@ -1,10 +1,9 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sanish/productpage.dart';
+import 'package:sanish/productDisplayPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'login.dart';
+import 'loginPage.dart';
 
 var recievedName;
 
@@ -17,44 +16,42 @@ class Screen1 extends StatefulWidget {
 
 class _Screen1State extends State<Screen1> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    _navigatetohome();
+    navigatetohome();
   }
-  _navigatetohome()async{
+
+  navigatetohome() async {
     List users = [];
     //shared preferences  <--Getting values for checking
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     recievedName = prefs.getString("unameSending");
-
     //reding json
     final String response = await rootBundle.loadString('assets/cred.json');
     final data = await json.decode(response);
-      users = data["users"];
-      if(users[0]["uname"]==recievedName) {
-        await Future.delayed(Duration(milliseconds: 1000),(){});
-        Navigator.pushReplacement(
+    users = data["users"];
+    if (users[0]["uname"] == recievedName) {
+      await Future.delayed(Duration(milliseconds: 1000), () {});
+      Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => ProdPage()));
+    } else {
+      await Future.delayed(Duration(milliseconds: 1000), () {});
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MyLogin()));
     }
-      else{
-        await Future.delayed(Duration(milliseconds: 1000),(){});
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => MyLogin()));
-      }
-
-    // Navigator.pushReplacement(
-    //     context, MaterialPageRoute(builder: (context) => MyLogin()));   <---Need to add
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Container(
-          child: Text('Sanish Aukhale', style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-              color: Colors.lightGreen,
-          )),
+          child: Text('Sanish Aukhale',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.lightGreen,
+              )),
         ),
       ),
     );
