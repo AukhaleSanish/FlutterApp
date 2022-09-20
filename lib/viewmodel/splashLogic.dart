@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sanish/view/productDisplayPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'loginPage.dart';
+
+import '../view/loginDisplay.dart';
+import '../view/splashDisplay.dart';
 
 class Screen1 extends StatefulWidget {
   const Screen1({Key? key}) : super(key: key);
@@ -20,11 +22,7 @@ class _Screen1State extends State<Screen1> {
   }
 
   navigatetohome() async {
-    await testMetchod();
-  }
-
-  Future<void> testMetchod() async {
-     var recievedName;
+    var recievedName;
     List users = [];
     //shared preferences  <--Getting values for checking
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -42,24 +40,12 @@ class _Screen1State extends State<Screen1> {
 
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => MyLogin()));
-      //Navigator.pushReplacement(context, MnewRoute)
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          child: Text('Sanish Aukhale',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: Colors.lightGreen,
-              )),
-        ),
-      ),
-    );
+    return splashDisplay();
   }
 }
+

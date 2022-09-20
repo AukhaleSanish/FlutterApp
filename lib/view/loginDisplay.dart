@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../viewmodel/loginLogic.dart';
 import 'productDisplayPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,43 +15,9 @@ class MyLogin extends StatefulWidget {
 class _MyLoginState extends State<MyLogin> {
   final uName = TextEditingController();
   final password = TextEditingController();
-  List _users = [];
 
-  // Fetch content from the json file
-  Future<void> readJson() async {
-    // final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-    // late Future<String> _unameCheck;
-    final String response = await rootBundle.loadString('assets/cred.json');
-    final data = await json.decode(response);
-    setState(() {
-      _users = data["users"];
-      setState(() async {
-        if (uName.text == _users[0]["uname"] &&
-            password.text == _users[0]["pass"]) {
-          await Future.delayed(Duration(milliseconds: 1000), () {});
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => ProdPage()));
-          // showDialog(
-          //     context: context,
-          //     builder: (context) {
-          //       return AlertDialog(
-          //         content: Text("Successful"),
-          //       );
-          //     },
-          //   );
-        } else {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                content: Text("Unsuccessful"),
-              );
-            },
-          );
-        }
-      });
-    });
-  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +58,7 @@ class _MyLoginState extends State<MyLogin> {
                 ), //For Spac
                 ElevatedButton(
                   onPressed: () async {
-                    readJson();
+                    readJson(uName.text,password.text,context);
                     final SharedPreferences prefs =
                         await SharedPreferences.getInstance();
                     prefs.setString('unameSending', uName.text);

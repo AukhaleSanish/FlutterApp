@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sanish/view/splashScreen.dart';
+import 'package:sanish/viewmodel/splashLogic.dart';
 
 void main() {
   runApp(const MyApp());
