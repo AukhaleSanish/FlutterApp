@@ -1,11 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sanish/productDisplayPage.dart';
+import 'package:sanish/view/productDisplayPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'loginPage.dart';
-
-var recievedName;
 
 class Screen1 extends StatefulWidget {
   const Screen1({Key? key}) : super(key: key);
@@ -22,6 +20,11 @@ class _Screen1State extends State<Screen1> {
   }
 
   navigatetohome() async {
+    await testMetchod();
+  }
+
+  Future<void> testMetchod() async {
+     var recievedName;
     List users = [];
     //shared preferences  <--Getting values for checking
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -36,10 +39,13 @@ class _Screen1State extends State<Screen1> {
           context, MaterialPageRoute(builder: (context) => ProdPage()));
     } else {
       await Future.delayed(Duration(milliseconds: 1000), () {});
+
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => MyLogin()));
+      //Navigator.pushReplacement(context, MnewRoute)
     }
   }
+
 
   @override
   Widget build(BuildContext context) {

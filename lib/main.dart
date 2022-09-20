@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sanish/splashScreen.dart';
+import 'package:sanish/view/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Project1',
       theme: ThemeData(
         primarySwatch: Colors.blue,

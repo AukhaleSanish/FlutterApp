@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'dataAPI.dart';
+import '../networking/dataAPI.dart';
 
 class ProdPage extends StatefulWidget {
   const ProdPage({Key? key}) : super(key: key);
