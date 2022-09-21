@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class splashDisplay extends StatelessWidget {
   const splashDisplay({
@@ -12,13 +12,17 @@ class splashDisplay extends StatelessWidget {
       body: Center(
         child: Container(
           child: Text('Sanish Aukhale',
-              style: TextStyle(
-                fontSize: 30,
+              style:
+
+              TextStyle(
+                fontSize: 40,
                 fontWeight: FontWeight.bold,
-                color: Colors.lightGreen,
-              )),
+                color: Colors.white,
+              )
+          ),
         ),
       ),
+      backgroundColor: Colors.blue,
     );
   }
 }

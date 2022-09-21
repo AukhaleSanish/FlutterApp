@@ -16,9 +16,6 @@ class _MyLoginState extends State<MyLogin> {
   final uName = TextEditingController();
   final password = TextEditingController();
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +26,10 @@ class _MyLoginState extends State<MyLogin> {
             child: Text(
               'LOGIN',
               style: TextStyle(
-                color: Colors.green,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
                 fontSize: 24,
+                //decoration: TextDecoration.underline,
               ),
             ),
           ),
@@ -43,7 +42,12 @@ class _MyLoginState extends State<MyLogin> {
               children: [
                 TextField(
                   controller: uName,
-                  decoration: InputDecoration(hintText: 'USERNAME'),
+                  decoration: InputDecoration(
+                    fillColor: Colors.black,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                      hintText: 'USERNAME'
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -51,10 +55,13 @@ class _MyLoginState extends State<MyLogin> {
                 TextField(
                   controller: password,
                   obscureText: true,
-                  decoration: InputDecoration(hintText: 'PASSWORD'),
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      hintText: 'PASSWORD'),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 40,
                 ), //For Spac
                 ElevatedButton(
                   onPressed: () async {
@@ -63,13 +70,17 @@ class _MyLoginState extends State<MyLogin> {
                         await SharedPreferences.getInstance();
                     prefs.setString('unameSending', uName.text);
                   },
-                  child: Text('Login'),
+                  child: Text('SIGN IN'),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                 ),
+                )
               ],
             ),
           ),
         ],
       ),
+      backgroundColor: Colors.blue,
     );
   }
 }
