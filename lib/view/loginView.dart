@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../viewmodel/loginLogic.dart';
+import '../viewmodel/loginViewModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyLogin extends StatefulWidget {

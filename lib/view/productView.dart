@@ -4,7 +4,6 @@ import '../networking/dataAPI.dart';
 
 class ProdPage extends StatefulWidget {
   const ProdPage({Key? key}) : super(key: key);
-
   @override
   State<ProdPage> createState() => _ProdPageState();
 }

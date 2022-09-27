@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sanish/view/productDisplayPage.dart';
+import 'package:sanish/view/productView.dart';
 
 Future<void> readJson(uName,password,context) async {
   List users = [];

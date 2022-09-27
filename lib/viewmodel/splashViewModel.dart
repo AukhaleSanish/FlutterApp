@@ -3,11 +3,11 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sanish/view/productDisplayPage.dart';
+import 'package:sanish/view/productView.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../view/loginDisplay.dart';
-import '../view/splashDisplay.dart';
+import '../view/loginView.dart';
+import '../view/splashView.dart';
 
 class Screen1 extends StatefulWidget {
   const Screen1({Key? key}) : super(key: key);
