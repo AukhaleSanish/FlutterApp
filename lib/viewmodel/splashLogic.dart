@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,10 +20,10 @@ class _Screen1State extends State<Screen1> {
   @override
   void initState() {
     super.initState();
-    navigatetohome();
+    navigateToHome();
   }
 
-  navigatetohome() async {
+  navigateToHome() async {
     var recievedName;
     List users = [];
     //shared preferences  <--Getting values for checking
@@ -32,20 +34,20 @@ class _Screen1State extends State<Screen1> {
     final data = await json.decode(response);
     users = data["users"];
     if (users[0]["uname"] == recievedName) {
-      await Future.delayed(Duration(milliseconds: 2000), () {});
+      await Future.delayed(const Duration(milliseconds: 2000), () {});
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => ProdPage()));
+          context, MaterialPageRoute(builder: (context) => const ProdPage()));
     } else {
-      await Future.delayed(Duration(milliseconds: 1000), () {});
+      await Future.delayed(const Duration(milliseconds: 1000), () {});
 
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MyLogin()));
+          context, MaterialPageRoute(builder: (context) => const MyLogin()));
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return splashDisplay();
+    return const SplashDisplay();
   }
 }
 

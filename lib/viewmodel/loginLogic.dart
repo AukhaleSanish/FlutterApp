@@ -10,22 +10,14 @@ Future<void> readJson(uName,password,context) async {
   final data = await json.decode(response);
   users = data["users"];
   if (uName == users[0]["uname"] && password== users[0]["pass"]) {
-    Future.delayed(Duration(milliseconds: 1000), () {});
+    Future.delayed(const Duration(milliseconds: 1000), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => ProdPage()));
-    // showDialog(
-    //     context: context,
-    //     builder: (context) {
-    //       return AlertDialog(
-    //         content: Text("Successful"),
-    //       );
-    //     },
-    //   );
+        context, MaterialPageRoute(builder: (context) => const ProdPage()));
   } else {
     showDialog(
       context: context,
       builder: (context) {
-        return AlertDialog(
+        return const AlertDialog(
           content: Text("Unsuccessful"),
         );
       },

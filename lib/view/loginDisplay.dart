@@ -1,8 +1,5 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../viewmodel/loginLogic.dart';
-import 'productDisplayPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyLogin extends StatefulWidget {
@@ -22,11 +19,11 @@ class _MyLoginState extends State<MyLogin> {
       body: Stack(
         children: [
           Container(
-            padding: EdgeInsets.only(left: 30, top: 125),
-            child: Text(
+            padding: const EdgeInsets.only(left: 30, top: 125),
+            child: const Text(
               'LOGIN',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
                 //decoration: TextDecoration.underline,
@@ -42,45 +39,39 @@ class _MyLoginState extends State<MyLogin> {
               children: [
                 TextField(
                   controller: uName,
-                  decoration: InputDecoration(
-                    fillColor: Colors.black,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                      hintText: 'USERNAME'
-                  ),
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(), hintText: 'USERNAME'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ), //For Spacing
                 TextField(
                   controller: password,
                   obscureText: true,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      hintText: 'PASSWORD'),
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(), hintText: 'PASSWORD'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
-                ), //For Spac
+                ),
                 ElevatedButton(
                   onPressed: () async {
-                    readJson(uName.text,password.text,context);
+                    readJson(uName.text, password.text, context);
                     final SharedPreferences prefs =
                         await SharedPreferences.getInstance();
                     prefs.setString('unameSending', uName.text);
                   },
-                  child: Text('SIGN IN'),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                ),
+                    backgroundColor: MaterialStateProperty.all(Colors.orange),
+                  ),
+                  child: const Text('SIGN IN'),
                 )
               ],
             ),
           ),
         ],
       ),
-      backgroundColor: Colors.blue,
+      // backgroundColor: Colors.blue,
     );
   }
 }

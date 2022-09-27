@@ -14,7 +14,7 @@ class _ProdPageState extends State<ProdPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('PRODUCT PAGE'),
+          title: const Text('PRODUCT PAGE'),
         ),
 
         body: Center(
@@ -37,17 +37,16 @@ class _ProdPageState extends State<ProdPage> {
                               width: 120, height: 120),
                         ),
                         Container(
-                            margin: EdgeInsets.all(12),
+                            margin: const EdgeInsets.all(12),
                             child: AutoSizeText(
                               snapshot.data[index].title,
                               overflow: TextOverflow.ellipsis,maxFontSize: 20,
                             )),
-                        SizedBox(
+                        const SizedBox(
                           height: 14,
                         ),
                         Container(
-                          child: AutoSizeText(
-                            "\$ " + snapshot.data[index].price,
+                          child: AutoSizeText("\$ " + snapshot.data[index].price,
                             textAlign: TextAlign.center,maxFontSize: 16,
                           ),
                         )
