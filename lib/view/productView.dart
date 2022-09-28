@@ -24,6 +24,7 @@ class _ProdPageState extends State<ProdPage> {
                 return const Center(
                   child: CircularProgressIndicator(
                     backgroundColor: Colors.red,
+                    color: Colors.white,
                   ),
                 );
               } else {
