@@ -10,16 +10,13 @@ class SplashDisplay extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: Text('Sanish Aukhale',
-            style:
-
-            TextStyle(
+            style: TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.bold,
               color: Colors.white,
-            )
-        ),
+            )),
       ),
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.green,
     );
   }
 }

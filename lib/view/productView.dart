@@ -15,7 +15,10 @@ class _ProdPageState extends State<ProdPage> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('PRODUCT PAGE'),
+          centerTitle: true,
+          backgroundColor: Colors.green.shade900,
         ),
+        backgroundColor: Colors.green.shade400,
         body: Center(
           child: FutureBuilder(
             future: getData(),
@@ -36,12 +39,16 @@ class _ProdPageState extends State<ProdPage> {
                   itemCount: snapshot.data?.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Card(
+                      //color: Colors.grey,
                       child: Column(
                         children: [
                           Container(
                             padding: const EdgeInsets.all(14),
-                            child: Image.network(snapshot.data[index].image,
-                                width: 120, height: 120),
+                            child: Image.network(
+                              snapshot.data[index].image,
+                              width: 120,
+                              height: 120,
+                            ),
                           ),
                           Container(
                               margin: const EdgeInsets.all(12),

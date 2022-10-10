@@ -16,6 +16,7 @@ class _MyLoginState extends State<MyLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green,
       body: Stack(
         children: [
           Container(
@@ -23,9 +24,10 @@ class _MyLoginState extends State<MyLogin> {
             child: const Text(
               'LOGIN',
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 24,
+                fontSize: 30,
+
                 //decoration: TextDecoration.underline,
               ),
             ),
@@ -39,8 +41,16 @@ class _MyLoginState extends State<MyLogin> {
               children: [
                 TextField(
                   controller: uName,
-                  decoration: const InputDecoration(
-                      border: OutlineInputBorder(), hintText: 'USERNAME'),
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'USERNAME',
+                    prefixIcon: Icon(
+                      Icons.person,
+                      color: Colors.white,
+                    ),
+                    //hintStyle: TextStyle(color: Colors.white)
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
@@ -48,9 +58,19 @@ class _MyLoginState extends State<MyLogin> {
                 TextField(
                   controller: password,
                   obscureText: true,
+                  cursorColor: Colors.white,
                   decoration: const InputDecoration(
-                      border: OutlineInputBorder(), hintText: 'PASSWORD'),
+                    border: OutlineInputBorder(),
+                    hintText: 'PASSWORD',
+
+                    prefixIcon: Icon(
+                      Icons.key,
+                      color: Colors.white,
+                    ),
+                    //hintStyle: TextStyle(color: Colors.white)
+                  ),
                 ),
+
                 const SizedBox(
                   height: 40,
                 ),
@@ -64,8 +84,11 @@ class _MyLoginState extends State<MyLogin> {
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.orange),
                   ),
-                  child: const Text('SIGN IN'),
-                )
+                  child: const Text(
+                    'SIGN IN',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
               ],
             ),
           ),
