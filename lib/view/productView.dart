@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-
 import '../networking/dataAPI.dart';
 
 class ProdPage extends StatefulWidget {
@@ -16,9 +15,9 @@ class _ProdPageState extends State<ProdPage> {
         appBar: AppBar(
           title: const Text('PRODUCT PAGE'),
           centerTitle: true,
-          backgroundColor: Colors.green.shade900,
+          backgroundColor: Colors.red.shade200,
         ),
-        backgroundColor: Colors.green.shade400,
+        backgroundColor: Color(0xFFFFE7DA),
         body: Center(
           child: FutureBuilder(
             future: getData(),

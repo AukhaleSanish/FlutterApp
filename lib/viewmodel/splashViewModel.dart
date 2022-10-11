@@ -3,15 +3,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sanish/view/productView.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import '../view/productView.dart';
 import '../view/loginView.dart';
 import '../view/splashView.dart';
 
 class Screen1 extends StatefulWidget {
   const Screen1({Key? key}) : super(key: key);
-
   @override
   State<Screen1> createState() => _Screen1State();
 }
@@ -50,4 +48,3 @@ class _Screen1State extends State<Screen1> {
     return const SplashDisplay();
   }
 }
-

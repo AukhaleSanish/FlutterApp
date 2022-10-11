@@ -7,16 +7,16 @@ class SplashDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Text('Sanish Aukhale',
             style: TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
             )),
       ),
-      backgroundColor: Colors.green,
+      backgroundColor: Color(0xFFFFE7DA),
     );
   }
 }
