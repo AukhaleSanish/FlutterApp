@@ -37,7 +37,6 @@ class _Screen1State extends State<Screen1> {
           context, MaterialPageRoute(builder: (context) => const ProdPage()));
     } else {
       await Future.delayed(const Duration(milliseconds: 1000), () {});
-
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const MyLogin()));
     }
