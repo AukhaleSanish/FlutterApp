@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:sanish/view/productDescription.dart';
+import 'package:sanish/view/productFullDetails.dart';
 import '../networking/dataAPI.dart';
 
 class ProdPage extends StatefulWidget {
