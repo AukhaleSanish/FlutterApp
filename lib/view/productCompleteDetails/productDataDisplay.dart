@@ -17,20 +17,27 @@ class AboveHalf extends StatelessWidget {
         RichText(
           text: TextSpan(
             children: [
-              TextSpan(
+              const TextSpan(
                 text: "\nPrice\n",
                 style: TextStyle(color: Colors.black),
               ),
               TextSpan(
                 text: "\$ " + snp.data[index].price + "\n\n",
-                style: Theme.of(context).textTheme.headline4?.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                style: Theme.of(context).textTheme.headline5?.copyWith(
+                      color: Colors.red,
+                      //  fontWeight: FontWeight.bold,
                     ),
               ),
               TextSpan(
                 text: "Ratings\n",
                 style: TextStyle(color: Colors.black),
+              ),
+              TextSpan(
+                text: snp.data[index].rating,
+                style: Theme.of(context).textTheme.headline5?.copyWith(
+                      color: Colors.red,
+                      // fontWeight: FontWeight.bold,
+                    ),
               ),
               WidgetSpan(
                 child: Padding(
@@ -44,14 +51,7 @@ class AboveHalf extends StatelessWidget {
                 ),
               ),
               TextSpan(
-                text: snp.data[index].rating + "\n",
-                style: Theme.of(context).textTheme.headline4?.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-              TextSpan(
-                text: "Category\n",
+                text: "\n\nCategory\n",
                 style: TextStyle(
                   color: Colors.black,
                 ),
@@ -59,8 +59,8 @@ class AboveHalf extends StatelessWidget {
               TextSpan(
                 text: snp.data[index].category + "\n",
                 style: Theme.of(context).textTheme.headline5?.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                      color: Colors.red,
+                      //fontWeight: FontWeight.bold,
                     ),
               ),
             ],

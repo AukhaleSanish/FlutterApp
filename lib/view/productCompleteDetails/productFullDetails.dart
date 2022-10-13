@@ -1,6 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sanish/view/productDataDisplay.dart';
+import 'package:sanish/view/productCompleteDetails/productDataDisplay.dart';
 
 class ProductDescription extends StatelessWidget {
   final Map<String, String> productData;
@@ -17,11 +18,7 @@ class ProductDescription extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
-        // leading: IconButton(
-        //   icon: Icon(Icons.arrow_back),
-        //   color: Colors.cyan,
-        //   onPressed: () {},
-        // ),
+
         actions: [
           IconButton(
             onPressed: () {},
@@ -44,7 +41,7 @@ class ProductDescription extends StatelessWidget {
               child: Stack(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: size.height * 0.45),
+                    margin: EdgeInsets.only(top: size.height * 0.36),
                     padding: EdgeInsets.only(
                         top: size.height * 0.04, left: 10, right: 10),
                     //height: 400,
@@ -76,7 +73,7 @@ class ProductDescription extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Column(
                       children: [
-                        Text(
+                        AutoSizeText(
                           snp.data[index].title,
                           style:
                               Theme.of(context).textTheme.headline5?.copyWith(
@@ -84,6 +81,7 @@ class ProductDescription extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                           textAlign: TextAlign.center,
+                          maxFontSize: 18,
                         ),
                         AboveHalf(snp: snp, index: index),
                       ],
