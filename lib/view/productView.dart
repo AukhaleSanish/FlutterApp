@@ -17,6 +17,16 @@ class _ProdPageState extends State<ProdPage> {
         title: const Text('PRODUCT PAGE'),
         centerTitle: true,
         backgroundColor: Colors.red.shade200,
+        elevation: 0,
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back),
+        //   color: Colors.cyan,
+        //   onPressed: () {},
+        // ),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart))
+        ],
       ),
       backgroundColor: Color(0xFFFFE7DA),
       body: Center(
@@ -57,6 +67,10 @@ class _ProdPageState extends State<ProdPage> {
                     },
                     child: Card(
                       //color: Colors.grey,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      elevation: 5,
                       child: Column(
                         children: [
                           Container(
