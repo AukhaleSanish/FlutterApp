@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AboveHalf extends StatelessWidget {
@@ -22,13 +21,12 @@ class AboveHalf extends StatelessWidget {
                 style: TextStyle(color: Colors.black),
               ),
               TextSpan(
-                text: "\$ " + snp.data[index].price + "\n\n",
+                text: "${"\$" + snp.data[index].price}\n\n",
                 style: Theme.of(context).textTheme.headline5?.copyWith(
                       color: Colors.red,
-                      //  fontWeight: FontWeight.bold,
                     ),
               ),
-              TextSpan(
+              const TextSpan(
                 text: "Ratings\n",
                 style: TextStyle(color: Colors.black),
               ),
@@ -39,9 +37,9 @@ class AboveHalf extends StatelessWidget {
                       // fontWeight: FontWeight.bold,
                     ),
               ),
-              WidgetSpan(
+              const WidgetSpan(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding: EdgeInsets.symmetric(
                     horizontal: 2.0,
                   ),
                   child: Icon(
@@ -50,7 +48,7 @@ class AboveHalf extends StatelessWidget {
                   ),
                 ),
               ),
-              TextSpan(
+              const TextSpan(
                 text: "\n\nCategory\n",
                 style: TextStyle(
                   color: Colors.black,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../viewmodel/splashViewModel.dart';
+import '../view-model/splashViewModel.dart';
 
 void main() {
   runApp(const MyApp());

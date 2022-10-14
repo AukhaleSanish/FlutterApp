@@ -1,12 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sanish/view/productCompleteDetails/productDataDisplay.dart';
+import '/view/productCompleteDetails/productDataDisplay.dart';
 
 class ProductDescription extends StatelessWidget {
   final Map<String, String> productData;
-  final snp;
-  final index;
+  dynamic snp;
+  dynamic index;
   ProductDescription(this.productData, this.snp, this.index);
   @override
   Widget build(BuildContext context) {
@@ -17,17 +16,17 @@ class ProductDescription extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
 
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             color: Colors.black,
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             color: Colors.black,
           )
         ],
@@ -43,9 +42,12 @@ class ProductDescription extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: size.height * 0.36),
                     padding: EdgeInsets.only(
-                        top: size.height * 0.04, left: 10, right: 10),
+                      top: size.height * 0.04,
+                      left: 10,
+                      right: 10,
+                    ),
                     //height: 400,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xFFFFE7DA),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(25),
@@ -64,7 +66,9 @@ class ProductDescription extends StatelessWidget {
                         ),
                         Text(
                           snp.data[index].description,
-                          style: TextStyle(fontSize: 15),
+                          style: const TextStyle(
+                            fontSize: 15,
+                          ),
                         )
                       ],
                     ),

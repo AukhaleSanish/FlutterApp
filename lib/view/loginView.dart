@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../viewmodel/loginViewModel.dart';
+import '../view-model/loginViewModel.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class _MyLoginState extends State<MyLogin> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
               "assets/images/loginPage.png",
@@ -39,7 +39,7 @@ class _MyLoginState extends State<MyLogin> {
                   TextField(
                     controller: uName,
                     cursorColor: Colors.black,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(100)),
                       ),
@@ -58,20 +58,18 @@ class _MyLoginState extends State<MyLogin> {
                     controller: password,
                     obscureText: true,
                     cursorColor: Colors.black,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(100),
                           ),
-                          borderSide: const BorderSide(color: Colors.red)),
+                          borderSide: BorderSide(color: Colors.red)),
                       labelText: 'PASSWORD',
                       hintText: '*****',
                       prefixIcon: Icon(
                         Icons.key,
                         color: Colors.black,
                       ),
-
-                      //hintStyle: TextStyle(color: Colors.white)
                     ),
                   ),
 
@@ -89,9 +87,12 @@ class _MyLoginState extends State<MyLogin> {
                       backgroundColor:
                           MaterialStateProperty.all(Colors.red.shade50),
                     ),
-                    child: Text(
+                    child: const Text(
                       'SIGN IN',
-                      style: TextStyle(fontSize: 18, color: Colors.black),
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ],
@@ -100,7 +101,6 @@ class _MyLoginState extends State<MyLogin> {
           ],
         ),
       ),
-      // backgroundColor: Colors.blue,
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:sanish/view/productCompleteDetails/productFullDetails.dart';
+import '/view/productCompleteDetails/productFullDetails.dart';
 import '../networking/dataAPI.dart';
 
 class ProdPage extends StatefulWidget {
@@ -18,17 +18,12 @@ class _ProdPageState extends State<ProdPage> {
         centerTitle: true,
         backgroundColor: Colors.red.shade200,
         elevation: 0,
-        // leading: IconButton(
-        //   icon: Icon(Icons.arrow_back),
-        //   color: Colors.cyan,
-        //   onPressed: () {},
-        // ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart))
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
         ],
       ),
-      backgroundColor: Color(0xFFFFE7DA),
+      backgroundColor: const Color(0xFFFFE7DA),
       body: Center(
         child: FutureBuilder(
           future: getData(),
@@ -50,7 +45,7 @@ class _ProdPageState extends State<ProdPage> {
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap: () {
-                      Map<String, String> productData = Map();
+                      Map<String, String> productData = {};
                       productData['product_img'] = snapshot.data[index].image;
                       productData['product_name'] = snapshot.data[index].title;
                       productData['product_price'] = snapshot.data[index].price;
