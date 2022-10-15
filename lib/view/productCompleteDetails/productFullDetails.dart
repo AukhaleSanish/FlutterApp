@@ -19,11 +19,11 @@ class ProductDescription extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.black),
 
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search),
-            color: Colors.black,
-          ),
+          // IconButton(
+          //   onPressed: () {},
+          //   icon: const Icon(Icons.search),
+          //   color: Colors.black,
+          // ),
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.shopping_cart),
