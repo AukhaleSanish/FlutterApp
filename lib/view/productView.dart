@@ -1,5 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'cartView.dart';
+import '../provider/cart_provider.dart';
+import '../provider/db_helper.dart';
 import '/view/productCompleteDetails/productFullDetails.dart';
 import '../networking/dataAPI.dart';
 
@@ -10,6 +15,7 @@ class ProdPage extends StatefulWidget {
 }
 
 class _ProdPageState extends State<ProdPage> {
+  DBHelper? dbHelper = DBHelper();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +25,34 @@ class _ProdPageState extends State<ProdPage> {
         backgroundColor: Colors.red.shade200,
         elevation: 0,
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CartScreen()));
+            },
+            child: Center(
+              child: Badge(
+                badgeContent: Consumer<CartProvider>(
+                  builder: (context, value, child) {
+                    return Text(
+                      value.getCounter().toString(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),
+                    );
+                  },
+                ),
+                animationDuration: Duration(milliseconds: 300),
+                child: Icon(
+                  Icons.shopping_cart,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 25,
+          ),
         ],
       ),
       backgroundColor: const Color(0xFFFFE7DA),

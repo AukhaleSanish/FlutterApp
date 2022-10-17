@@ -16,6 +16,8 @@ Future<List<ProductData>> getData() async {
       description: tmpProducts["description"],
       category: tmpProducts["category"],
       rating: tmpProducts["rating"]['rate'].toString(),
+      fPrice: 0.0,
+      quantity: 0,
     );
     products.add(prods);
   }
