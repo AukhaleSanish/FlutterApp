@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../view/productView.dart';
+import '../view/productDisplay.dart';
 import '../view/loginView.dart';
 import '../view/splashView.dart';
 

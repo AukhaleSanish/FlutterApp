@@ -2,10 +2,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sanish/view/singleProductDisplay.dart';
 import 'cartView.dart';
 import '../provider/cart_provider.dart';
 import '../provider/db_helper.dart';
-import '/view/productCompleteDetails/productFullDetails.dart';
+
 import '../networking/dataAPI.dart';
 
 class ProdPage extends StatefulWidget {

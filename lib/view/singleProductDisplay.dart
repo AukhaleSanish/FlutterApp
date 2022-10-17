@@ -2,11 +2,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../provider/cart_provider.dart';
+import '../provider/cart_provider.dart';
 import '/model/productModel.dart';
-import '../cartView.dart';
-import '/view/productCompleteDetails/productDataDisplay.dart';
-import '../../provider/db_helper.dart';
+import 'cartView.dart';
+import '../provider/db_helper.dart';
 
 class ProductDescription extends StatefulWidget {
   final Map<String, String> productData;
@@ -154,7 +153,80 @@ class _ProductDescriptionState extends State<ProductDescription> {
                           textAlign: TextAlign.center,
                           maxFontSize: 18,
                         ),
-                        AboveHalf(snp: widget.snp, index: widget.index),
+                        Row(
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  const TextSpan(
+                                    text: "\nPrice\n",
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                  TextSpan(
+                                    text:
+                                        "${"\$" + widget.snp.data[widget.index].price}\n\n",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline5
+                                        ?.copyWith(
+                                          color: Colors.red,
+                                        ),
+                                  ),
+                                  const TextSpan(
+                                    text: "Ratings\n",
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                  TextSpan(
+                                    text: widget.snp.data[widget.index].rating,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline5
+                                        ?.copyWith(
+                                          color: Colors.red,
+                                          // fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
+                                  const WidgetSpan(
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 2.0,
+                                      ),
+                                      child: Icon(
+                                        Icons.star,
+                                        color: Colors.amberAccent,
+                                      ),
+                                    ),
+                                  ),
+                                  const TextSpan(
+                                    text: "\n\nCategory\n",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text:
+                                        widget.snp.data[widget.index].category +
+                                            "\n",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline5
+                                        ?.copyWith(
+                                          color: Colors.red,
+                                          //fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: Image.network(
+                                widget.snp.data[widget.index].image,
+                                fit: BoxFit.fitHeight,
+                                height: 150,
+                              ),
+                            )
+                          ],
+                        ),
                       ],
                     ),
                   ),
